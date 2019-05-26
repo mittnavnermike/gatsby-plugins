@@ -73,16 +73,3 @@ export default Video
 
 **GatsbyVimeoSrcSet**  
 Gives you all of the srcset properties. This is probably the one you're going to use the most.
-
-```graphql
-{
-  vimeo(link: { eq: "https://vimeo.com/315401283/dfd80bf8c1" }) {
-    link
-    name
-    aspectRatio
-    srcset {
-      ...GatsbyVimeoSrcSet
-    }
-  }
-}
-```
