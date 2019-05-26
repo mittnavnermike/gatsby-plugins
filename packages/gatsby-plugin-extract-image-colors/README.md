@@ -9,8 +9,7 @@
 ### Installation
 
 1. `npm i gatsby-plugin-extract-image-color`
-2. [Register an app on vimeo](https://developer.vimeo.com/apps/new). You will need a clientId, a clientSecret and an accessToken. Access tokens can be generated on the vimeo app page.
-3. Add config to `gatsby-config.js`
+2. Add config to `gatsby-config.js`
 
 ```js
 // gatsby-config.js
@@ -36,4 +35,44 @@ module.exports = {
     }
   ]
 }
+```
+
+# Example
+
+```jsx
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
+const query = graphql`
+  {
+    file(extension: { eq: "jpg" }) {
+      relativeDirectory
+      name
+      id
+      publicURL
+      extension
+      publicURL
+      colors {
+        ...GatsbyImageColors
+      }
+      childImageSharp {
+        fluid(maxWidth: 2500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
+
+const ImageWithBackground = () => {
+  const data = useStaticQuery(query)
+  return (
+    <div style={{ backgroundColor: data.file.colors.vibrant, height: '100vh' }}>
+      <Img fluid={data.file.childImageSharp.fluid} />
+    </div>
+  )
+}
+
+export default ImageWithBackground
 ```
