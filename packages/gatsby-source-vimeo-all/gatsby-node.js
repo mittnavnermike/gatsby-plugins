@@ -4,9 +4,11 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-let crypto = require('crypto');
+const fs = require('fs');
 
-let Vimeo = require('vimeo').Vimeo;
+const crypto = require('crypto');
+
+const Vimeo = require('vimeo').Vimeo;
 
 const defaultOptions = {};
 
@@ -27,7 +29,7 @@ function () {
     const clientId = options.clientId,
           clientSecret = options.clientSecret,
           accessToken = options.accessToken;
-    let client = new Vimeo(clientId, clientSecret, accessToken);
+    const client = new Vimeo(clientId, clientSecret, accessToken);
     const videos = yield new Promise((resolve, reject) => {
       client.request({
         method: 'GET',
