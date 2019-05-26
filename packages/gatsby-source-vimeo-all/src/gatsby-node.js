@@ -39,7 +39,7 @@ exports.sourceNodes = async (
         name: video.name,
         width: video.width,
         height: video.height,
-        aspectRatio: video.with / video.height,
+        aspectRatio: video.width / video.height,
         description: video.description,
         pictures: video.pictures,
         user: video.user,
