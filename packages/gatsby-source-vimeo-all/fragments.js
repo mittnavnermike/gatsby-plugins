@@ -1,12 +1,12 @@
 "use strict";
 
 exports.__esModule = true;
-exports.gatsbyImageSharpFixed = void 0;
+exports.GatsbyVimeoSrcSet = void 0;
 
 var _gatsby = require("gatsby");
 
-const gatsbyImageSharpFixed = _gatsby.graphql`
-  fragment GatsbyVimeoSrcSet on Vimeo {
+const GatsbyVimeoSrcSet = _gatsby.graphql`
+  fragment GatsbyVimeoSrcSet on VimeoSrcset {
     quality
     type
     width
@@ -18,4 +18,4 @@ const gatsbyImageSharpFixed = _gatsby.graphql`
     md5
   }
 `;
-exports.gatsbyImageSharpFixed = gatsbyImageSharpFixed;
+exports.GatsbyVimeoSrcSet = GatsbyVimeoSrcSet;

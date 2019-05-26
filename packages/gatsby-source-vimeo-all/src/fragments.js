@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
-export const gatsbyImageSharpFixed = graphql`
-  fragment GatsbyVimeoSrcSet on Vimeo {
+export const GatsbyVimeoSrcSet = graphql`
+  fragment GatsbyVimeoSrcSet on VimeoSrcset {
     quality
     type
     width
