@@ -1,5 +1,6 @@
-let crypto = require('crypto')
-let Vimeo = require('vimeo').Vimeo
+const fs = require('fs')
+const crypto = require('crypto')
+const Vimeo = require('vimeo').Vimeo
 
 const defaultOptions = {}
 
@@ -15,7 +16,7 @@ exports.sourceNodes = async (
   const options = { ...defaultOptions, ...pluginOptions }
   const { clientId, clientSecret, accessToken } = options
 
-  let client = new Vimeo(clientId, clientSecret, accessToken)
+  const client = new Vimeo(clientId, clientSecret, accessToken)
   const videos = await new Promise((resolve, reject) => {
     client.request(
       {
