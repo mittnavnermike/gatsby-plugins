@@ -1,5 +1,4 @@
 <div style="text-align: center; padding: 50px 0px;">
-  <img src="./logos.png" style="max-width: 100px" />
   <div style="max-width: 500px; margin: 0 auto;">
     <h1 style="border-bottom: none; margin-bottom: 0px;">gatsby-plugin-extract-image-color</h1>
     <p style="font-style: italic">Extracts colors from image adds them to the image data</p>
@@ -34,6 +33,14 @@ module.exports = {
       }
     }
   ]
+}
+```
+
+Default options:
+
+```js
+options: {
+  extensions: ['jpg', 'png']
 }
 ```
 

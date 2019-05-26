@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-extract-image-colors",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Plugin to extract image colors using vibrantjs",
   "main": "gatsby-node.js",
   "scripts": {
@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "color": "^3.1.1",
-    "crypto": "^1.0.1",
     "node-vibrant": "^3.2.0-alpha"
   },
   "peerDependencies": {
@@ -25,5 +24,11 @@
     "color",
     "vibrantjs",
     "extract"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "babel-preset-gatsby-package": "^0.1.4",
+    "cross-env": "^5.2.0"
+  }
 }

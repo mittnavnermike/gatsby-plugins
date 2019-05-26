@@ -6,10 +6,6 @@
     "build": "lerna run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "babel-preset-gatsby-package": "^0.1.4",
-    "cross-env": "^5.2.0",
     "lerna": "^3.14.1"
   },
   "dependencies": {}
