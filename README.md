@@ -6,4 +6,4 @@ A collection of gatsby plugins and utilities
 
 ## Packages
 
-- [gatsby-source-vimeo-all](https://github.com/mittnavnermike/gatsby/packages/gatsby-source-vimeo-all)
+- [gatsby-source-vimeo-all](https://github.com/mittnavnermike/gatsby-plugins/tree/master/packages/gatsby-source-vimeo-all)
