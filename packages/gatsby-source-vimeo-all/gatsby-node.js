@@ -80,7 +80,7 @@ exports.onPreExtractQueries = async ({
   } // We have Vimeo nodes so let's add our fragments to .cache/fragments.
 
 
-  await fs.copyFile(require.resolve(`./src/fragments.js`), `${program.directory}/.cache/fragments/vimeo-fragments.js`, err => {
+  await fs.copyFile(require.resolve(`${__dirname}/src/fragments.js`), `${program.directory}/.cache/fragments/vimeo-fragments.js`, err => {
     if (err) throw err;
   });
 }; // onPreExtract nodes can be used to add fragments for ex. srcset

@@ -76,7 +76,7 @@ exports.onPreExtractQueries = async ({ store, getNodesByType }) => {
 
   // We have Vimeo nodes so let's add our fragments to .cache/fragments.
   await fs.copyFile(
-    require.resolve(`./src/fragments.js`),
+    require.resolve(`${__dirname}/src/fragments.js`),
     `${program.directory}/.cache/fragments/vimeo-fragments.js`,
     err => {
       if (err) throw err
