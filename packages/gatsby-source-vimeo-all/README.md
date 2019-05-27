@@ -1,5 +1,5 @@
 <div style="text-align: center; padding: 50px 0px;">
-  <img src="./logos.png" style="max-width: 100px" />
+  <img src="https://raw.githubusercontent.com/mittnavnermike/gatsby-plugins/master/packages/gatsby-source-vimeo-all/logos.png" style="max-width: 100px" />
   <div style="max-width: 500px; margin: 0 auto;">
     <h1 style="border-bottom: none; margin-bottom: 0px;">gatsby-source-vimeo-all</h1>
     <p style="font-style: italic">A way to get all of your vimeo videos using the vimeo node-sdk.
