@@ -9,7 +9,12 @@
     "watch": "babel -w src --out-dir . --ignore **/__tests__"
   },
   "author": "Mike Patterson",
-  "homepage": "https://github.com/mittnavnermike/gatsby-plugins/tree/master/packages/gatsby-source-vimeo-all",
+  "homepage": "https://github.com/mittnavnermike/gatsby-plugins/tree/master/packages/gatsby-source-vimeo-all#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mittnavnermike/gatsby-plugins.git",
+    "directory": "packages/gatsby-source-vimeo-all"
+  },
   "license": "ISC",
   "dependencies": {
     "vimeo": "^2.1.1"
