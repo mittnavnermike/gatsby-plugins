@@ -1,6 +1,7 @@
 const fs = require('fs')
 const crypto = require('crypto')
 const Vimeo = require('vimeo').Vimeo
+const fetch = require('node-fetch')
 
 const defaultOptions = {}
 
