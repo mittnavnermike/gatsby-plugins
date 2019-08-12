@@ -1,4 +1,4 @@
 {
-  "packages": ["packages/*"],
+  "packages": ["packages/*", "my-default-starter"],
   "version": "independent"
 }

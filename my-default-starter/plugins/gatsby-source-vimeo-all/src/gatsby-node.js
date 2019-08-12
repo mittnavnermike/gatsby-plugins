@@ -34,7 +34,7 @@ exports.sourceNodes = async (
     videos.map(video => {
       if (!video.files) {
         console.warn(
-          "Files key is missing. Please make sure that you've added private and video_files permissions in the acces_token. https://developer.vimeo.com/apps"
+          "Files key is missing. Please make sure that you've added video_files permissions in the acces_token. https://developer.vimeo.com/apps"
         )
       }
       const nodeData = {
