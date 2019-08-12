@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-vimeo-all",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Plugin to fetch vimeo videos",
   "main": "gatsby-node.js",
   "scripts": {
