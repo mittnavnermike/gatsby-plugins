@@ -16,20 +16,31 @@ exports.sourceNodes = async (
   const options = { ...defaultOptions, ...pluginOptions }
   const { clientId, clientSecret, accessToken } = options
 
-  const client = new Vimeo(clientId, clientSecret, accessToken)
+  // const client = new Vimeo(clientId, clientSecret, accessToken)
+  // const videos = await new Promise((resolve, reject) => {
+  //   client.request(
+  //     {
+  //       method: 'GET',
+  //       path: '/me/videos' // /me/videos/{id}
+  //     },
+  //     (error, body, status_code, headers) => {
+  //       if (error) {
+  //         reject(error)
+  //       }
+  //       resolve(body.data)
+  //     }
+  //   )
+  // })
+
   const videos = await new Promise((resolve, reject) => {
-    client.request(
-      {
-        method: 'GET',
-        path: '/me/videos' // /me/videos/{id}
-      },
-      (error, body, status_code, headers) => {
-        if (error) {
-          reject(error)
-        }
-        resolve(body.data)
+    fetch('https://api.vimeo.com/me/videos', {
+      headers: {
+        Authorization: `bearer ${accessToken}`
       }
-    )
+    })
+      .then(res => res.json())
+      .then(res => resolve(res))
+      .catch(err => reject(err))
   })
 
   videos &&
