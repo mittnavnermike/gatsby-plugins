@@ -7,7 +7,9 @@
 
 ### Installation
 
-1. `npm i gatsby-plugin-extract-image-color`
+1. `npm i gatsby-plugin-extract-image-colors`
+    Or,
+    `yarn add gatsby-plugin-extract-image-colors`
 2. Add config to `gatsby-config.js`
 
 ```js
@@ -15,7 +17,7 @@
 module.exports = {
   plugins: [
     //... Other plugins
-    'gatsby-plugin-extract-image-color'
+    'gatsby-plugin-extract-image-colors'
   ]
 }
 ```
@@ -27,7 +29,7 @@ module.exports = {
   plugins: [
     //... Other plugins
     {
-      resolve: 'gatsby-plugin-extract-image-color',
+      resolve: 'gatsby-plugin-extract-image-colors',
       options: {
         extensions: ['jpg', 'png']
       }
