@@ -5,21 +5,37 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-// const query = graphql`
-//   query MyQuery {
-//     allVimeo {
-//       edges {
-//         node {
-//           width
-//         }
-//       }
-//     }
-//   }
-// `
+const query = graphql`
+  query MyQuery {
+    allVimeo {
+      edges {
+        node {
+          aspectRatio
+          duration
+          height
+          id
+          link
+          name
+          width
+          srcset {
+            md5
+            quality
+            size
+            link
+            height
+            fps
+            type
+            width
+          }
+        }
+      }
+    }
+  }
+`
 
 const IndexPage = () => {
-  // const videos = useStaticQuery(query)
-  // console.log(videos)
+  const videos = useStaticQuery(query)
+  console.log(videos)
   return (
     <Layout>
       <SEO title="Home" />

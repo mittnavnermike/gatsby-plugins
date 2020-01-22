@@ -1,7 +1,4 @@
-const VIMEO_CLIENT_ID = "e327a7eba9200f498a945051bc34a725ec4c167a"
-const VIMEO_CLIENT_SECRET =
-  "RO1eymhpQ/Pk0nRfKI1tiodCDVuxjRsmwotCbDczOL98iNjhbZR/2uDjkCsIbIsqHShF8uiACo+rnA8CQcNlAwASzxy1rMoXMnjEbCYRctpNmnrL50qiXvU7119UkzDt"
-const VIMEO_ACCESS_TOKEN = "97bf389f2b3a5d7157f199d280e5ba4f"
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -14,9 +11,9 @@ module.exports = {
     {
       resolve: "gatsby-source-vimeo-all",
       options: {
-        clientId: VIMEO_CLIENT_ID,
-        clientSecret: VIMEO_CLIENT_SECRET,
-        accessToken: VIMEO_ACCESS_TOKEN,
+        clientId: process.env.VIMEO_CLIENT_ID,
+        clientSecret: process.env.VIMEO_CLIENT_SECRET,
+        accessToken: process.env.VIMEO_ACCESS_TOKEN,
       },
     },
     {
