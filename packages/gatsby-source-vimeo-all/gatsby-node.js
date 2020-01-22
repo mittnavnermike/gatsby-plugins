@@ -37,13 +37,17 @@ exports.sourceNodes = async ({
       resolve(body.data);
     });
   });
-  videos && videos.map(video => {
-    if (!video.files) {
-      console.warn("Files key is missing. Please make sure that you've added private and video_files permissions in the acces_token. https://developer.vimeo.com/apps");
-    }
+  const videoFiles = videos && videos.filter(video => video.files);
+  hasVideoFiles = videoFiles.length !== 0;
 
+  if (!hasVideoFiles) {
+    console.info('Can\'t access video files through Vimeo API on this account. Won\'t create \"VimeoSrcset\" fragment.');
+    console.info('Please make sure that you\'re on a Pro plan and that "private" and "video_files" are in the scope of your token.');
+  }
+
+  videos && videos.map(video => {
     const nodeData = {
-      srcset: video.files,
+      srcset: hasVideoFiles ? video.files : false,
       name: video.name,
       width: video.width,
       height: video.height,
@@ -73,16 +77,18 @@ exports.onPreExtractQueries = async ({
   store,
   getNodesByType
 }) => {
-  const program = store.getState().program; // Check if there are any Vimeo nodes. If so add fragments for Vimeo.
-  // The fragment will cause an error if there are no Vimeo nodes.
+  if (hasVideoFiles) {
+    const program = store.getState().program; // Check if there are any Vimeo nodes. If so add fragments for Vimeo.
+    // The fragment will cause an error if there are no Vimeo nodes.
 
-  if (getNodesByType(`Vimeo`).length == 0) {
-    return;
-  } // We have Vimeo nodes so let's add our fragments to .cache/fragments.
+    if (getNodesByType(`Vimeo`).length == 0) {
+      return;
+    } // We have Vimeo nodes so let's add our fragments to .cache/fragments.
 
 
-  await fs.copyFile(require.resolve(`${__dirname}/src/fragments.js`), `${program.directory}/.cache/fragments/vimeo-fragments.js`, err => {
-    if (err) throw err;
-  });
+    await fs.copyFile(require.resolve(`${__dirname}/src/fragments.js`), `${program.directory}/.cache/fragments/vimeo-fragments.js`, err => {
+      if (err) throw err;
+    });
+  }
 }; // onPreExtract nodes can be used to add fragments for ex. srcset
 // https://youtu.be/0a5kmU0Dr80?t=462
