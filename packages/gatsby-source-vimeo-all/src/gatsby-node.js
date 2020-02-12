@@ -31,7 +31,7 @@ exports.sourceNodes = async (
   })
 
   const videoFiles = videos && videos.filter(video => video.files);
-  hasVideoFiles = videoFiles.length !== 0;
+  let hasVideoFiles = videoFiles.length !== 0;
 
   if (!hasVideoFiles) {
     console.info(
