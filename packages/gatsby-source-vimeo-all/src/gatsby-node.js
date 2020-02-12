@@ -4,6 +4,8 @@ const Vimeo = require('vimeo').Vimeo
 
 const defaultOptions = {}
 
+let hasVideoFiles;
+
 exports.sourceNodes = async (
   {
     actions: { createNode, createNodeField, touchNode },

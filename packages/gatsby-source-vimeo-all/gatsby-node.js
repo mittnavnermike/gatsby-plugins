@@ -7,6 +7,7 @@ const crypto = require('crypto');
 const Vimeo = require('vimeo').Vimeo;
 
 const defaultOptions = {};
+let hasVideoFiles;
 
 exports.sourceNodes = async ({
   actions: {
