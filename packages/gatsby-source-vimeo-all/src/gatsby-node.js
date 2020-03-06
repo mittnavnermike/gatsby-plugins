@@ -30,16 +30,16 @@ exports.sourceNodes = async (
     )
   })
 
-  const videoFiles = videos && videos.filter(video => video.files);
-  hasVideoFiles = videoFiles.length !== 0;
+  const videoFiles = videos && videos.filter(video => video.files)
+  const hasVideoFiles = videoFiles.length !== 0
 
   if (!hasVideoFiles) {
     console.info(
-      'Can\'t access video files through Vimeo API on this account. Won\'t create \"VimeoSrcset\" fragment.'
-    );
+      'Can\'t access video files through Vimeo API on this account. Won\'t create "VimeoSrcset" fragment.'
+    )
     console.info(
       'Please make sure that you\'re on a Pro plan and that "private" and "video_files" are in the scope of your token.'
-    );
+    )
   }
 
   videos &&
@@ -55,7 +55,7 @@ exports.sourceNodes = async (
         user: video.user,
         link: video.link,
         duration: video.duration
-      };
+      }
       createNode({
         // Data for the node.
         ...nodeData,
