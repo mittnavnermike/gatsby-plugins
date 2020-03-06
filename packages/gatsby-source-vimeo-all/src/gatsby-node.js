@@ -4,6 +4,8 @@ const Vimeo = require('vimeo').Vimeo
 
 const defaultOptions = {}
 
+let hasVideoFiles = false
+
 exports.sourceNodes = async (
   {
     actions: { createNode, createNodeField, touchNode },
@@ -31,7 +33,7 @@ exports.sourceNodes = async (
   })
 
   const videoFiles = videos && videos.filter(video => video.files)
-  const hasVideoFiles = videoFiles.length !== 0
+  hasVideoFiles = videoFiles.length !== 0
 
   if (!hasVideoFiles) {
     console.info(
