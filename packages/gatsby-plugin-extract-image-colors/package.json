@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-extract-image-colors",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Plugin to extract image colors using vibrantjs",
   "main": "gatsby-node.js",
   "scripts": {
