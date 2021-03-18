@@ -30,7 +30,7 @@ exports.sourceNodes = async ({
   const videos = await new Promise((resolve, reject) => {
     client.request({
       method: 'GET',
-      path: '/me/videos' // /me/videos/{id}
+      path: '/me/videos?per_page=100' // /me/videos/{id}
 
     }, (error, body, status_code, headers) => {
       if (error) reject(error);
